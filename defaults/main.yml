@@ -1,0 +1,2 @@
+prepare_ocp_nodes_become: true
+prepare_ocp_nodes_become_user: root

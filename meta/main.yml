@@ -1,0 +1,17 @@
+galaxy_info:
+  author: Greg Hellings
+  description: |-
+    Prepares a node to be an OpenShift Container Platform node prior to being
+    a target for openshift-ansible
+  company: Red Hat, Inc.
+  license: GPLv3
+  min_ansible_version: 2.4
+  platforms:
+    - name: EL
+      versions:
+        - 7
+
+  galaxy_tags:
+    - oasis
+
+dependencies: []

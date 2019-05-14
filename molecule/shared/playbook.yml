@@ -1,0 +1,9 @@
+- name: converge
+  hosts: all
+  roles:
+    - role: prepare_ocp_nodes
+  post_tasks: []
+  vars:
+    ansible_default_ipv4:
+      address: 127.0.0.1
+    prepare_ocp_nodes_hostname: localhost.localdomain

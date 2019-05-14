@@ -1,0 +1,19 @@
+- name: install base RPM packages
+  become: "{{ prepare_ocp_nodes_become }}"
+  become_user: "{{ prepare_ocp_nodes_become_user }}"
+  block:
+    - name: install base RPM packages
+      package:
+        name: "{{ prepare_ocp_nodes_packages }}"
+        state: present
+
+    - name: >
+        add local dnsmasq instance as authoritative for all subdomains of FQDN
+      blockinfile:
+        # yamllint disable-line rule:line-length
+        block: "address=/{{ prepare_ocp_nodes_hostname }}/{{ ansible_default_ipv4.address }}"
+        dest: /etc/dnsmasq.d/ocp_deploy.conf
+        create: true
+        mode: 0644
+        owner: root
+        group: root
