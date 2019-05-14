@@ -1,2 +1,3 @@
 prepare_ocp_nodes_become: true
 prepare_ocp_nodes_become_user: root
+prepare_ocp_nodes_hostname: "{{ ansible_fqdn }}"

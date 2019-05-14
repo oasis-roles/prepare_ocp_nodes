@@ -22,6 +22,7 @@ script:
   - molecule lint -s openstack
   # flake8 is not guaranteed to run on lint, do that before testing
   - flake8 $(find . -name '*.py')
+  - molecule dependency -s docker
   - molecule test -s docker
 
 notifications:
